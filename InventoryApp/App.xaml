@@ -1,0 +1,12 @@
+﻿<Application x:Class="InventoryApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:InventoryApp"
+             xmlns:ViewModels="clr-namespace:InventoryViewModels;assembly=InventoryViewModels"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <!--<ViewModels:InventoryViewModel x:Key="InventoryViewModel" />
+        <ViewModels:OrderViewItemViewModel x:Key="OrderViewItem" />
+        <ViewModels:OrderViewModel x:Key="OrderViewModel" />-->
+    </Application.Resources>
+</Application>

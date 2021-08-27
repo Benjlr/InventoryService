@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="InventoryApp.Views.OrderView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:InventoryApp.Views"
+             xmlns:inventoryViewModels="clr-namespace:InventoryViewModels;assembly=InventoryViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <inventoryViewModels:OrderViewModel></inventoryViewModels:OrderViewModel>
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ListView Grid.Row="0" ItemsSource="{Binding OrderItems}" SelectedIndex="{Binding SelectedOrder}">
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <local:OrderViewItem  />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button Command="{Binding AddOrderCommand}" Width="150" Margin="15 5 15 5">Add Order</Button>
+            <Button Command="{Binding DeleteOrderCommand}" Width="150" Margin="15 5 15 5">Delete Order</Button>
+
+        </StackPanel>
+    </Grid>
+</UserControl>
